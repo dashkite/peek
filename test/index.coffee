@@ -2,7 +2,10 @@ import assert from "@dashkite/assert"
 import {test, success} from "@dashkite/amen"
 import print from "@dashkite/amen-console"
 
-import { parse } from "../src"
+import { compile } from "../src"
+# import { parse } from "../src/parse"
+# import { scan } from "../src/scan"
+import { Instructions } from "../src/registry"
 
 do ->
 
@@ -11,13 +14,12 @@ do ->
     test "nominal", ->
 
       program = """
-        feature.shapes       |      ; shapes
-          feature.holes      |      ; holes
-          feature.color 4    |      ; color holes
-          update.fill
+        math.integer 3       |      ; 3
+          math.integer 5     |      ; 5 3
+          math.add                  ; 8          
       """
 
-      console.log JSON.stringify ( parse program ), null, 2
+      assert.equal 8, ( compile program ).apply()
 
   ]
 

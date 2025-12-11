@@ -8,15 +8,15 @@ importers:
 
   .:
     dependencies:
+      '@dashkite/katana':
+        specifier: link:../katana
+        version: link:../katana
       '@dashkite/parse':
-        specifier: ^0.11.16
-        version: 0.11.16
+        specifier: link:../parse
+        version: link:../parse
       '@dashkite/scan':
-        specifier: ^0.8.19
-        version: 0.8.19
-      peggy:
-        specifier: ^5.0.6
-        version: 5.0.6
+        specifier: link:../scan
+        version: link:../scan
     devDependencies:
       '@dashkite/amen':
         specifier: ^0.9.14
@@ -917,9 +917,6 @@ packages:
   '@dashkite/kaiko@0.3.3':
     resolution: {integrity: sha512-XnAvVr9y2MsDqMLr4A24vkLF7Iuq3E8RjHEEpqhe29P5NevVX9jXKcXUStNMp9MSJbjHd2pqUNiM5Vvdja9ggg==}
 
-  '@dashkite/lru-cache@0.3.0':
-    resolution: {integrity: sha512-C3oWEh56vm8ce5cZ5lJNiG3NFm66hHrp4axk9sUCy/I/8WtF3kr639CUWDZpet5K2PozL8T2eLjwbNVAKqI8/Q==}
-
   '@dashkite/masonry-coffee@0.2.0':
     resolution: {integrity: sha512-xJO48SIRpsYbJF32CwpA6yeEJhNh+DtxCucyt4MNJqO0yru9X7hoxZsHneRoUE+kISD0KTO8DLQiHv21nU/V2A==}
 
@@ -947,14 +944,8 @@ packages:
   '@dashkite/media-type@0.1.1':
     resolution: {integrity: sha512-IaB3fvmxFhN5JNf+m//2sEXgh3tOpLOKkwD7Fam8BS62r9doED8QAb80OfSj71r6b4+xmcNHlFkBzqNNKjtIdw==}
 
-  '@dashkite/parse@0.11.16':
-    resolution: {integrity: sha512-YG28YOSA+OJoQZ3jbLytKO7DT58hIeYjHTtZfyN9rWdv4RAnwvF0FX/hUv1BM0b1w1RgPKmF1M9VEkfaG/azLA==}
-
   '@dashkite/parse@0.4.3':
     resolution: {integrity: sha512-bE0kBjaGYjUnCzWJelQnx8vsfJ9YP07aRTVFZoY7TZWvMmnihoCSugL4IVWAOA2O0EAZXjT8FcjA4bNJ/BQwwg==}
-
-  '@dashkite/scan@0.8.19':
-    resolution: {integrity: sha512-nb5fdxyYJh4d1TZtL+Y7AuMuS30XZwEV+gwONRzUg+E331anyqsIw+AmSQKW7jowG6Wp83fFkMx1owEow6s2Kg==}
 
   '@dashkite/sky-local-storage@0.8.0':
     resolution: {integrity: sha512-ECEomLb3/hkICATZWI5et6WQZTJQRAt7aW0LHkwUXg5mReUEN23xsRy41QSXis6b0UzvvPYR9LfwldmPIkqqdA==}
@@ -1047,10 +1038,6 @@ packages:
   '@nodelib/fs.walk@1.2.8':
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
-
-  '@peggyjs/from-mem@3.1.1':
-    resolution: {integrity: sha512-m5OEjgJaePWpyNtQCvRZkpLoV+z44eh6QIO9yEwQuOThdUdkECO3wcKLT3tFA3H8WM5bxU/K/dpmo7r/X16UEw==}
-    engines: {node: '>=20.8'}
 
   '@smithy/abort-controller@2.2.0':
     resolution: {integrity: sha512-wRlta7GuLWpTqtFfGo+nZyOO1vEvewdNR1R4rTxpC8XU6vG/NDyrFBhwLZsqg1NUoR1noVaXJPC/7ZK47QCySw==}
@@ -1424,10 +1411,6 @@ packages:
     resolution: {integrity: sha512-yPVavfyCcRhmorC7rWlkHn15b4wDVgVmBA7kV4QVBsF7kv/9TKJAbAXVTxvTnwP8HHKjRCJDClKbciiYS7p0DQ==}
     engines: {node: '>=16'}
 
-  commander@14.0.2:
-    resolution: {integrity: sha512-TywoWNNRbhoD0BXs1P3ZEScW8W5iKrnbithIl0YH+uCmBd0QpPOA8yc82DS3BIE5Ma6FnBVUsJ7wVUDz4dvOWQ==}
-    engines: {node: '>=20'}
-
   concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
 
@@ -1800,11 +1783,6 @@ packages:
   path-parse@1.0.7:
     resolution: {integrity: sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==}
 
-  peggy@5.0.6:
-    resolution: {integrity: sha512-Sud8Zus0JAgE+U4zwkJv29OOaXhviFI7J90/6cGfy3OoqR8dpnieeF9a46dj0bTtqiFnrFatldA6ltQyOJvNmg==}
-    engines: {node: '>=20'}
-    hasBin: true
-
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
 
@@ -1870,11 +1848,6 @@ packages:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
     hasBin: true
 
-  semver@7.7.2:
-    resolution: {integrity: sha512-RF0Fw+rO5AMf9MAyaRXI4AV0Ulj5lMHqVxxdSgiVbixSCXoEmmX/jk0CuJw4+3SqroYO9VoUh+HcuJivvtJemA==}
-    engines: {node: '>=10'}
-    hasBin: true
-
   shebang-command@2.0.0:
     resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}
     engines: {node: '>=8'}
@@ -1885,10 +1858,6 @@ packages:
 
   signal-exit@3.0.7:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
-
-  source-map-generator@2.0.2:
-    resolution: {integrity: sha512-unCl5BQhF/us51DiT7SvlSY3QUPhyfAdHJxd8l7FXdwzqxli0UDMV2dEuei2SeGp3Z4rB/AJ9zKi1mGOp2K2ww==}
-    engines: {node: '>=20'}
 
   source-map-support@0.5.21:
     resolution: {integrity: sha512-uBHU3L3czsIyYXKX88fdrGovxdSCoTGDRZ6SYXtSRxLZUzHg5P/66Ht6uoUlHu9EZod+inXhKo3qQgwXUT/y1w==}
@@ -4151,8 +4120,6 @@ snapshots:
 
   '@dashkite/kaiko@0.3.3': {}
 
-  '@dashkite/lru-cache@0.3.0': {}
-
   '@dashkite/masonry-coffee@0.2.0':
     dependencies:
       '@swc/core': 1.15.3
@@ -4230,17 +4197,9 @@ snapshots:
       '@dashkite/joy': 0.3.16
       '@dashkite/parse': 0.4.3
 
-  '@dashkite/parse@0.11.16':
-    dependencies:
-      '@dashkite/joy': 0.7.0
-
   '@dashkite/parse@0.4.3':
     dependencies:
       '@dashkite/joy': 0.3.16
-
-  '@dashkite/scan@0.8.19':
-    dependencies:
-      '@dashkite/lru-cache': 0.3.0
 
   '@dashkite/sky-local-storage@0.8.0':
     dependencies:
@@ -4351,10 +4310,6 @@ snapshots:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.19.1
-
-  '@peggyjs/from-mem@3.1.1':
-    dependencies:
-      semver: 7.7.2
 
   '@smithy/abort-controller@2.2.0':
     dependencies:
@@ -4832,8 +4787,6 @@ snapshots:
 
   commander@11.1.0: {}
 
-  commander@14.0.2: {}
-
   concat-map@0.0.1: {}
 
   convert-source-map@1.9.0: {}
@@ -5199,12 +5152,6 @@ snapshots:
 
   path-parse@1.0.7: {}
 
-  peggy@5.0.6:
-    dependencies:
-      '@peggyjs/from-mem': 3.1.1
-      commander: 14.0.2
-      source-map-generator: 2.0.2
-
   picocolors@1.1.1: {}
 
   picomatch@2.3.1: {}
@@ -5260,8 +5207,6 @@ snapshots:
 
   semver@6.3.1: {}
 
-  semver@7.7.2: {}
-
   shebang-command@2.0.0:
     dependencies:
       shebang-regex: 3.0.0
@@ -5269,8 +5214,6 @@ snapshots:
   shebang-regex@3.0.0: {}
 
   signal-exit@3.0.7: {}
-
-  source-map-generator@2.0.2: {}
 
   source-map-support@0.5.21:
     dependencies:
