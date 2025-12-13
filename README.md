@@ -46,7 +46,7 @@ In addition, we can leverage the JavaScript runtime to handle things like garbag
 
 Peek promises to combine the practical approach of languages like Factor with the ubiquity of JavaScript. To realize that promise, Peek will need to borrow heavily from languages like Factor. Or, perhaps, one will eventually run seamlessly in JavaScript environments, thanks to advances like Web Assembly.
 
-For now, Peek is the simplest approach to delivering best of both worlds.
+For now, Peek is the simplest way to deliver the best of both worlds.
 
 ## Status
 
