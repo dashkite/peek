@@ -1,16 +1,19 @@
+import { pipe } from "@dashkite/joy/function"
 import { parse } from "./parse"
-import "./instructions"
-import { Instructions } from "./registry"
-import { Program } from "./program"
+import { Operators } from "./operators"
+
+lookup = ( operator ) ->
+  if ( f = Operators.get operator )?
+    f
+  else
+    throw new Error "peek:
+      unknown operator [ #{ operator } ]"
 
 compile = ( program ) ->
-  result = Program.make()
-  for { instruction, parameters } from parse program
-    if ( K = ( Instructions.get instruction ))?
-      result.append ( K.make parameters... )
-    else
-      throw new Error "peek:
-        unknown instruction [ #{ instruction } ]"
-  result
+  operators =
+    for { operator, parameters } from parse program
+      ( lookup operator )
+        .bind parameters
+  pipe [ operators..., ([ top ]) -> top ]
 
 export { compile }

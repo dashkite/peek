@@ -41,18 +41,18 @@ literal = pipe [
     # string
   ]
   map ( literal ) ->
-    instruction: "stack.push"
+    operator: "stack.push"
     parameters: Object.values literal
 ]
 
-instruction = pipe [
+operator = pipe [
   symbol
   map ({ symbol }) -> 
-    instruction: symbol
+    operator: symbol
     parameters: []
 ]
 
-program = many ( any [ literal, instruction, operator ]), 1
+program = many ( any [ literal, operator, operator ]), 1
 
 parse = Fn.pipe [
   scan

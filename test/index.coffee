@@ -3,9 +3,6 @@ import {test, success} from "@dashkite/amen"
 import print from "@dashkite/amen-console"
 
 import { compile } from "../src"
-# import { parse } from "../src/parse"
-# import { scan } from "../src/scan"
-import { Instructions } from "../src/registry"
 
 do ->
 
@@ -19,13 +16,13 @@ do ->
         +                 ; 8      
         2
         -                 ; 6  
-        2
-        *                 ; 12
         3
-        /                 ; 4
+        *                 ; 18
+        9
+        /                 ; 2
       """
 
-      assert.equal 4, ( compile program ).apply()
+      assert.equal 2, ( compile program ).apply []
 
   ]
 
