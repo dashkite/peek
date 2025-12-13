@@ -14,12 +14,18 @@ do ->
     test "nominal", ->
 
       program = """
-        math.integer 3       |      ; 3
-          math.integer 5     |      ; 5 3
-          math.add                  ; 8          
+        3                 ; 3
+        5                 ; 5 3
+        +                 ; 8      
+        2
+        -                 ; 6  
+        2
+        *                 ; 12
+        3
+        /                 ; 4
       """
 
-      assert.equal 8, ( compile program ).apply()
+      assert.equal 4, ( compile program ).apply()
 
   ]
 

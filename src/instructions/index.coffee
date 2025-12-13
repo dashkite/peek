@@ -1,2 +1,11 @@
 import "./math/add"
-import "./math/integer"
+import "./math/subtract"
+import "./math/multiply"
+import "./math/divide"
+
+import "./stack/copy"
+import "./stack/down"
+import "./stack/drop"
+import "./stack/push"
+import "./stack/swap"
+import "./stack/up"

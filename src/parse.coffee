@@ -35,40 +35,24 @@ symbol = tagged "symbol"
 
 operator = tagged "operator"
 
-literal = any [
-  number
-  # string
+literal = pipe [
+  any [
+    number
+    # string
+  ]
+  map ( literal ) ->
+    instruction: "stack.push"
+    parameters: Object.values literal
 ]
 
 instruction = pipe [
   symbol
-  map ({ symbol }) -> symbol
+  map ({ symbol }) -> 
+    instruction: symbol
+    parameters: []
 ]
 
-parameter = pipe [
-
-  any [
-    literal
-    # symbol
-  ]
-
-  map ( token ) ->
-    ( Object.values token )[ 0 ]
-
-] 
-
-parameters = many parameter
-
-operand = pipe [
-  all [
-    instruction
-    parameters
-  ]
-  map ([ instruction, parameters ]) ->
-    { instruction, parameters }
-]
-
-program = list operator, operand
+program = many ( any [ literal, instruction, operator ]), 1
 
 parse = Fn.pipe [
   scan

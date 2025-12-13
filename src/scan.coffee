@@ -60,7 +60,7 @@ scanner = make "start",
     ]
 
     [
-      /^[^\|\s]+/
+      /^[^\s]+/
       pipe [
         advance
         append
