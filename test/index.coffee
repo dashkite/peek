@@ -22,7 +22,7 @@ do ->
         /                 ; 2
       """
 
-      assert.equal 2, ( compile program ).apply []
+      assert.equal 2, ( compile program ).apply null
 
   ]
 
