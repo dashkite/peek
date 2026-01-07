@@ -14,6 +14,6 @@ compile = ( program ) ->
     for { operator, parameters } from parse program
       ( lookup operator )
         .bind parameters
-  pipe [ operators..., ([ top ]) -> top ]
+  pipe [ operators..., ([ _..., top ]) -> top ]
 
 export { compile }
